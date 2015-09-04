@@ -1,0 +1,151 @@
+<div id="jumbotron-container">
+    <div id="jumbotron" class="jumbotron">
+        <div class="container">
+            <h1>Del 1 <small>- Rader och kolumner</small></h1>
+        </div>
+    </div>
+</div>
+</header>
+<div class="container well">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Template</h2>
+            <p>
+                Det första som du behöver är en basic template som man kan
+                hitta på 
+                <a href="http://getbootstrap.com/getting-started/">
+                    http://getbootstrap.com/getting-started/
+                </a>,
+                leta upp denna (finns en bit ner) och välj copy.
+                <br/> 
+                Skapa en html-fil, kalla den gärna index.html,
+                och ersätt innehållet med det som vi kopierat.
+            </p>
+            <div class="alert alert-warning" role="alert">
+                Glöm inte att inkludera jquery i ditt projekt,
+                då bootstrap är beroende av detta.
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-lg-7">
+            <h2>Bootstrap</h2>
+            <p>
+                Innan vi sätter igång och tränar på själva gridsystemet tänkte
+                jag att vi skulle skapa en snygg header. Till min header
+                använder jag en jumbotron,
+                
+                <a href="http://getbootstrap.com/components/#jumbotron">
+                    http://getbootstrap.com/components/#jumbotron
+                </a>
+                <br/>
+                Jag ersätter &lt;h1&gt;-taggen med koden på bilden.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/jumbotron.png" alt="text" />
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <p>
+                Testa nu följande kod efter &lt;/header&gt;
+                <hr/>
+                Här har vi nu skapat en container och fyra rader (mycket div-taggar blir det)
+                <br/>
+                Vi använder oss här av klasserna
+                <ol>
+                    <li><p>container: en slags omslutningsklass som bootstrap skall ha</p></li>
+                <li><p>row: rader</p></li>
+                <li><p>well, well-lg och well-sm: som ger en infällningseffekt, man kan lägga till well-lg och well-sm om man vill ändra lite på utseendet.</p></li>
+                </ol>
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/container-with-rows.png" alt="text" />
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <p>
+                Vi skall nu testa kolumner, i detta exempel har jag en rad,
+                med fyra kolumner, när skärmen är i storleken lg kommer du se
+                att alla fyra är på samma rad då 4*3 = 12, när man minskar
+                bredden kommer man in i medium (md) storlek då får de tre
+                första storleken 4 vilket är en full rad så då sätter jag
+                den fjärde till storleken 12 dvs den fyller upp en ny rad.
+                minskar man ännu mer så blir det två kolumner/rad och ställer
+                man läsaren till minsta tar varje kolumn en full rad, hade
+                vi velat ha kvar det som storlek 6 kan ersätta col-sm-6 till
+                col-xs-6.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/columns.png" alt="text" />
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Övningar</h2>
+            <ol>
+                <li>
+                    <p>
+                        Vi har använt oss av klassen container, det finns en 
+                        annan container som heter container-fluid testa denna,
+                        skillnader?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Undersök hur kolumner och rader fungerar.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Hur fungerar offsetting ? 
+                        <a href="http://getbootstrap.com/css/#grid-offsetting">
+                            http://getbootstrap.com/css/#grid-offsetting
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Testa hur nästling fungerar.
+                        <a href="http://getbootstrap.com/css/#grid-nesting">
+                            http://getbootstrap.com/css/#grid-nesting
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Försök få in en bild i ditt projekt, lägg in denna på
+                        din webbsida sätt klass img-responsive på bilden,
+                        lägg denna i en kolumn som ändrar storlek responsivt.
+                        vad händer?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Lägg gärna till och testa detta
+                        <a href="http://getbootstrap.com/css/#images-shapes">
+                            http://getbootstrap.com/css/#images-shapes
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Har ni tid, kolla gärna över mer om vad som finns
+                        på denna sida 
+                        <a href="http://getbootstrap.com/css/">
+                            http://getbootstrap.com/css/
+                        </a>
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
