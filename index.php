@@ -33,6 +33,9 @@
                     case 3:
                         include("content/page3.html");
                         break;
+                    case 3:
+                        include("content/page4.html");
+                        break;
                     default:
                         include("content/default.html");
                 }
