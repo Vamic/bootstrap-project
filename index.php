@@ -13,7 +13,11 @@
 
         <!-- Bootstrap -->
         <link id="bootstrap-theme" href="bower_components/bootstrap/dist/css/bootstrap-darkly.min.css" rel="stylesheet">
-
+        <style>
+            ol ol{
+                list-style-type: lower-alpha;
+            }
+        </style>
     </head>
     <body>
         <header>
