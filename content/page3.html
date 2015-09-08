@@ -1,7 +1,7 @@
 <div id="jumbotron-container">
     <div id="jumbotron" class="jumbotron">
         <div class="container">
-            <h1>Del 3 <small> - blap</small></h1>
+            <h1>Del 3 <small> - Menyer</small></h1>
         </div>
     </div>
 </div>
@@ -9,23 +9,148 @@
 <div class="container well">
     <div class="row">
         <div class="col-sm-12">
-            <h2>Template</h2>
+            <h2>Menyer</h2>
             <p>
-                Det första som du behöver är en basic template som man kan
-                hitta på 
-                <a href="http://getbootstrap.com/getting-started/">
-                    http://getbootstrap.com/getting-started/
-                </a>,
-                leta upp denna (finns en bit ner) och välj copy.
-                <br/> 
-                Skapa en html-fil, kalla den gärna index.html,
-                och ersätt innehållet med det som vi kopierat.
+                Vi skall nu idag titta på menyer, hur dessa är uppbyggda. 
+                Vi kommer också lära oss en hel del saker som vi kan ha nytta
+                av även utanför menyerna såsom drop-downs. Vi kommer i detta
+                exemplet ha med ett formulär i menyn men vi kommer gå igenom
+                hur formulär fungerar mer i detalj nästa pass.
             </p>
-            <div class="alert alert-warning" role="alert">
-                Glöm inte att inkludera jquery i ditt projekt,
-                då bootstrap är beroende av detta.
-            </div>
         </div>
     </div>
     <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <h2>Förberedelser</h2>
+            <p>
+                För att kunna testa lite olika funktioner så använder jag mig
+                av följande exempel.
+            </p>
+            <p>
+                Som du kan se är det en massa stycken med massa dummytext
+                (skapad på lipsum.com), detta är för att jag vill ha
+                en sida som jag som fyller mer än en skärm.
+            </p>
+            <h4>Färdig template</h4>
+            <a href="https://github.com/T4vxo/bootstrap/">
+                https://github.com/T4vxo/bootstrap/
+            </a>
+            <p>Tips, har man eget github konto, kan man </p>
+            <ol>
+                <li>
+                    <p>
+                        Köra fork på projektet
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Klona det till sin dator
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Öppna i netbeans
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        I netbeans ladda allt via bower
+                    </p>
+                </li>
+            </ol>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/menyer_lorem.png" alt="text"/>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <h2>Uppbyggnad</h2>
+            <p>
+                Själva uppbyggnaden av meny är att vi har en &lt;nav&gt; i denna
+                en container sedan har vi två områden det ena med klassen
+                navbar-header, den andra med klasserna collapse och
+                navbar-collapse, denna div skall även ha ett id.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/menyer_uppbyggnad.png" alt="text"/>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-7">
+            <h4>Brand</h4>
+            <p>
+                Vi skall ni lägga till en brand (detta gör man i navbar-header),
+                man lägger helt enkelt in en a-tagg med klassen navbar-brand.
+            </p>
+            <p>
+                Nu kan ni testa att titta på er sida
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/menyer_brand_code.png" alt="text"/>
+            <br/>
+            <img class="img-responsive" src="content/img/menyer_brand_result.png" alt="text"/>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-7">
+            Man kan om man vill ha en logotype istället för text lägga in en bild,
+            men man få göra lite handpåläggning, detta är ett exempel på en bild
+            som jag la in.
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/menyer_hund.png" alt="text"/>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Ändringar i nav-taggen</h2>
+            <p>
+                Man vill kanske styra vart menyn skall vara på skärmen detta kan
+                man enkelt genom att lägga till en klass till i nav-taggen.
+                <br/>
+                Det finns tre klasser som vi skall testa
+                <br/>
+                <br/>
+                <strong>navbar-fixed-top</strong>: Fixerar menyn högst upp, även
+                om man skrollar ner på sidan så syns menyn. Tänk på att det
+                översta innehållet inte syns så du kan behöva lägga till
+                följande css-kod 
+                </br>
+                <code>
+                body { padding-top: 70px; }
+                </code>
+                <br/>
+                <strong>navbar-fixed-bottom</strong>: Fixerar menyn längst ner,
+                även om man skrollar på sidan så syns menyn. Tänk på att det
+                översta innehållet inte syns så du kan behöva lägga till
+                följande css-kod 
+                </br>
+                <code>
+                body { padding-bottom: 70px; }
+                </code>
+                <br/>
+                <strong>navbar-static-top</strong>: Menyn högst upp.
+                <br/>
+                <br/>
+                Ni kan testa att byta ut navbar-default till navbar-inverse,så kan du se hur designen ändrar sig på menyn.
+            </p>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <h2></h2>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/menyer_lorem.png" alt="text"/>
+        </div>
+    </div>
 </div>
