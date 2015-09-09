@@ -1,5 +1,16 @@
 <?php
+session_start();
+if(isset($_POST["button"]))
+{
+    $_SESSION['darkly'] = !$_SESSION['darkly'];
+}
+$darkly = $_SESSION["darkly"];
+$css = "-darkly";
+if (!$darkly) {
+    $css = "";
+}
 
+$css = "bootstrap" . $css . ".min.css";
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -12,7 +23,9 @@
         <title>Bootstrap 101 Template</title>
 
         <!-- Bootstrap -->
-        <link id="bootstrap-theme" href="bower_components/bootstrap/dist/css/bootstrap-darkly.min.css" rel="stylesheet">
+        <?php
+        echo('<link id="bootstrap-theme" href="bower_components/bootstrap/dist/css/' . $css . '" rel="stylesheet">');
+        ?>
         <style>
             ol ol{
                 list-style-type: lower-alpha;
@@ -27,55 +40,60 @@
         <header>
             <?php
             include("content/bootstrapnav.html");
-            
-            if(isset($_GET['page']))
-            {
-                switch($_GET['page'])
-                {
+            $page = 0;
+            if (isset($_GET['page'])) {
+                switch ($_GET['page']) {
                     case 1:
                         include("content/page1.html");
+                        $page = 1;
                         break;
                     case 2:
                         include("content/page2.html");
+                        $page = 2;
                         break;
                     case 3:
                         include("content/page3.html");
+                        $page = 3;
                         break;
-                    case 3:
+                    case 4:
                         include("content/page4.html");
+                        $page = 4;
                         break;
                     default:
                         include("content/default.html");
+                        $page = 0;
                 }
-            }
-            else
-            {
+            } else {
                 include("content/default.html");
+                        $page = 0;
             }
+            echo('<script>var page = '.$page.'</script>');
             ?>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        
-        <script>
-                $("#theme-button").click(function(){
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+            <script>
+                $("#theme-button").click(function () {
                     var theme = $("#bootstrap-theme")[0].href;
-                    if(theme.includes("darkly"))
+                    if (theme.includes("darkly"))
                     {
-                        theme = theme.replace("bootstrap-darkly.min.css","bootstrap.min.css");
+                        theme = theme.replace("bootstrap-darkly.min.css", "bootstrap.min.css");
                     }
                     else
                     {
-                        theme = theme.replace("bootstrap.min.css","bootstrap-darkly.min.css");
+                        theme = theme.replace("bootstrap.min.css", "bootstrap-darkly.min.css");
                     }
                     $("#bootstrap-theme")[0].href = theme;
                 });
                 if (!String.prototype.includes) {
-                    String.prototype.includes = function() {'use strict';
+                    String.prototype.includes = function () {
+                        'use strict';
                         return String.prototype.indexOf.apply(this, arguments) !== -1;
                     };
                 }
-        </script>
+            </script>
     </body>
 </html>
+<?php
