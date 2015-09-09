@@ -17,6 +17,10 @@
             ol ol{
                 list-style-type: lower-alpha;
             }
+            /*Make sure the long links break properly*/
+            p a{
+                word-break: break-all;
+            }
         </style>
     </head>
     <body>
