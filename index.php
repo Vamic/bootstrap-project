@@ -40,34 +40,29 @@ $css = "bootstrap" . $css . ".min.css";
         <header>
             <?php
             include("content/bootstrapnav.html");
-            $page = 0;
             if (isset($_GET['page'])) {
                 switch ($_GET['page']) {
                     case 1:
                         include("content/page1.html");
-                        $page = 1;
                         break;
                     case 2:
                         include("content/page2.html");
-                        $page = 2;
                         break;
                     case 3:
                         include("content/page3.html");
-                        $page = 3;
                         break;
                     case 4:
                         include("content/page4.html");
-                        $page = 4;
+                        break;
+                    case 5:
+                        include("content/page5.html");
                         break;
                     default:
                         include("content/default.html");
-                        $page = 0;
                 }
             } else {
                 include("content/default.html");
-                        $page = 0;
             }
-            echo('<script>var page = '.$page.'</script>');
             ?>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
