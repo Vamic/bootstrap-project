@@ -9,11 +9,345 @@
 <div class="container well">
     <div class="row">
         <div class="col-sm-12">
-            <h2>TITLE</h2>
+            <h2>Formulär</h2>
             <p>
-                TEXT
+                Man skapar ett formulär med taggarna 
+                <code>&lt;form&gt;&lt;!--placera innehåll här --&gt;&lt;/form&gt;</code>,
+                till form finns en hel del attribut några viktiga som du bör 
+                känna till är
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        <strong>method</strong> om man skall skicka data mha av get eller post
+                        (mer om detta senare)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>action</strong> vilken address som skall anropas när man skickar
+                        formuläret.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>autocomplete</strong> om du sätter detta till false så försöker
+                        inte webbläsaren fylla i data automatiskt.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <h3>
+                Labels
+            </h3>
+            <p>
+                Sedan lägger man in olika komponenter i sitt formulär, en viktig
+                sak är att använda label-taggar för att få bra tillgänglighet
+                bör du ha labels även om de inte skall synas
+                (för de med talsyntes)
+                <br />
+                Man kan använda labels på två olika sätt
+            </p>
+            <p>
+                Tittar vi på den första label så finns ett for-attribut, värdet
+                i detta attribut skall vara id på den komponent som de skall
+                vara kopplad till. I det andra fallet så ligger själva
+                komponenten i label-taggen och behövs ingen for.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/forms_labels_code.png" alt="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>
+                Input
+            </h3>
+            <p>
+                Är kanske den mest använda taggen i formulär och den har en del
+                viktiga attribut, några av de viktigaste är
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        <strong>type</strong>: sätter vilken typ av input det
+                        skall vara. text, password, checkbox… en uppsjö av
+                        olika varianter finns det. 
+                        <a href="http://www.w3schools.com/tags/att_input_type.asp">
+                            http://www.w3schools.com/tags/att_input_type.asp
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>name</strong>: att sätta ett namn på en input är
+                        det sättet man
+                        kommer åt innehållet om skickar till en server, använder
+                        man exempel radio-knappar så sätter man samma name på
+                        alla för att gruppera dem.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>value</strong>: värdet, nödvändigt på checkboxes,
+                        radiobuttons. För det värdet som man matar in.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>placeholder</strong>: Vill du exempelvis skriva
+                        “Mata in förnamn här” så använd placeholder så skrivs
+                        värdet i exempelvis text-boxen.
+                    </p>
+                </li>
+            </ul>   
+            <p>
+                Det finns fler attribut man kan använda, du kan hitta dem här
+                <a href="http://www.w3schools.com/tags/tag_input.asp">
+                    http://www.w3schools.com/tags/tag_input.asp
+                </a>
+                </br>
+                Det finns ett gäng andra taggar med som är användbara såsom 
+                textarea, select, button men vi lägger detta som en övning lite
+                senare att söka upp hur dessa fungera.
             </p>
         </div>
     </div>
     <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <h2>
+                Forms i bootstrap
+            </h2>
+            <p>
+                Vi skall testa några olika typer av designer för formulär, vi 
+                börjar med att skapa ett enkelt formulär, jag placerar detta i 
+                en container. Vill man vara ordentlig kan man använda type=email
+                istället för text som jag råkade ha i mina exempel. email kan ge
+                vissa fördelar i olika webbläsare exempelvis validering och att
+                det på telefoner läggs till en .com på tangentbordet.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/forms_form_code.png" alt="text"/>
+            <br />
+            <img class="img-responsive" src="content/img/forms_form_result.png" alt="text"/>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-7">
+            <p>
+                Vi lägger nu till form-group och form-control. form-group lägger
+                på en div som vi omsluter varje label/input (testa att ta bort
+                för att se att avstånd i höjdled påverkas) och form-control gör
+                att bredden blir 100%. har du en 
+                <code>&lt;label&gt;text&lt;input ...../&gt;&lt;label&gt;</code>
+                så får du ett annat utseende.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/forms_form_code_2.png" alt="text"/>
+            <br />
+            <img class="img-responsive" src="content/img/forms_form_result_2.png" alt="text"/>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <p>
+                Vi skall fortsätta med att lägga in lite färg samt en ikon, det
+                finns tre färger som man kan sätta has-error, has-success och
+                has-warning. Dessa kan man sätta på samma div som har
+                form-groupen. Vill man att label skall få färg sätter man
+                klassen control-label på denna. För att lägga in en ikon (glyph)
+                precis som tidigare fast lägg även till klassen 
+                form-control-feedback. Dessutom lägger du till has-feedback på 
+                div en som du kan se nedan.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/forms_form_code_3.png" alt="text"/>
+            <br />
+            <img class="img-responsive" src="content/img/forms_form_result_3.png" alt="text"/>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-7">
+            <p>
+                Jag skall nu testa har-error på den andra delen av formuläret, 
+                se här att jag har lagt till placeholder som fyller innehållet 
+                i en textbox (fast det är inte detsamma som value) la även till 
+                ett stycke med klassen help-block som är lämplig för medelande. 
+                Detta exemplet kan vara det som användaren ser om hen matat in 
+                fel epostaddress (vilket vi självklart kontrollerar innan man 
+                skickar till servern)
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/forms_form_code_4.png" alt="text"/>
+            <br />
+            <img class="img-responsive" src="content/img/forms_form_result_4.png" alt="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <h3>form-inline</h3>
+            <p>
+                Vi skall nu börja om från början (med startexemplet) och testa
+                form-inline som är en klass som vi sätter på formuläret. Testa
+                sedan att minska storleken på fönstret och se vad som händer 
+                när man minskar ner det.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/forms_inline_code.png" alt="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            
+            <p>
+                Så här ser det ut med stor skärm
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <br />
+            <img class="img-responsive" src="content/img/forms_inline_result.png" alt="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <p>
+                Och så här med liten skärm
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <br />
+            <img class="img-responsive" src="content/img/forms_inline_result_2.png" alt="text"/>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-7">
+            <h3>form-horizontal</h3>
+            <p>
+                Ett tredje sätt att designa formulär demostreras härmed. Man 
+                arbetar här med gridsystemet och kan med hjälp av col och offset
+                designa ur man vill att sitt formulär skall se ut. det fungerar
+                dock inte att ha form-controll (som sätter bredd till 100%) och
+                col-klasser på samma element därför läggs det in några nya 
+                div-taggar.
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <img class="img-responsive" src="content/img/forms_horizontal_code.png" alt="text"/>
+            <br />
+            <img class="img-responsive" src="content/img/forms_horizontal_result.png" alt="text"/>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Övningar</h2>
+            <ol>
+                <li>
+                    <p>
+                        Undersök hur textarea, select, button fungerar.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Undersök vilka olika typer av input det finns.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Två av de som finns är radio och checkboxes, lär er hur 
+                        dessa fungerar och om det finns speciella saker i 
+                        bootstrap för dessa.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Det finns några states (tillstånd) som exempelvis 
+                        readonly, focus och static, testa själv hur dessa 
+                        fungerar.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Testa även storlekar 
+                        <a href="http://getbootstrap.com/css/#forms-control-sizes">
+                            http://getbootstrap.com/css/#forms-control-sizes
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Hur fungerar fieldset och legend?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Vi testade förut att ha ett formulär i en navbar, 
+                        navbar-form fungerar ungefär som form-inline. Testa ett
+                        lite mer avancerat formulär i en nav.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Form har ett attribut som heter action, som berättar vad
+                        som skall hända när man skickar formuläret. Testa hur 
+                        följande fungerar. Om du har Preserve log (finns iaf i
+                        chrome) testa att köra först utan ikryssat alternativ 
+                        sedan med.	 
+                    </p>
+                    <img class="img-responsive" src="content/img/forms_question_img.png"
+                         alt="skärmdump"/>
+                    <ol>
+                        <li>
+                            <p>
+                                Skriv av nedan kod, testa vad händer?, testa 
+                                sedan att istället för action=”” skriva 
+                                action="javascript:void(0);" skillnaden?
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Skapa ett valfritt formulär men se till att du
+                                har följande attribut, vad händer?
+                            </p>
+                            <img class="img-responsive" src="content/img/forms_action.png"
+                                 alt="skärmdump"/>
+                        </li>
+                        <li>
+                            <p>
+                                Skriv av exempel 8c, vad händer?
+                            </p>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Kod till 8a och 8b</h2>
+            <img class="img-responsive" src="content/img/forms_8ab.png"
+                 alt="kod"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Kod till 8c</h2>
+            <img class="img-responsive" src="content/img/forms_8c.png"
+                 alt="kod"/>
+        </div>
+    </div>
 </div>
